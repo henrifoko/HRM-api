@@ -1,6 +1,8 @@
-package com.frsummit.HRM.api.rmi.model;
+package com.frsummit.HRM.api.rmi.entity;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
 
     private String house;
     private String street;

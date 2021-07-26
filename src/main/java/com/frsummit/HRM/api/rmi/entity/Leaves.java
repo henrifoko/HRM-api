@@ -1,13 +1,18 @@
-package com.frsummit.HRM.api.rmi.model;
+package com.frsummit.HRM.api.rmi.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Leaves implements Serializable {
 
     private int id;
     private String userId;
+    
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     private Date leaveApplyDate;
     private Date leaveApplyFrom;
     private Date leaveApplyTo;
@@ -163,6 +168,13 @@ public class Leaves implements Serializable {
     }
 
     public void setUserLeaves(Set<User> userLeaves) {
-        this.userLeaves = userLeaves;
+		HashSet<User> set = new HashSet<User>();
+		userLeaves.forEach(user -> set.add(user));
+
+		/**
+		 * Date transfered from possibly non known implementation of Set interface to
+		 * the HashSet interface which can be easily transfered throw the RMI canal
+		 */
+		this.userLeaves = set;
     }
 }

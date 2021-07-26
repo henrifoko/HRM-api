@@ -1,8 +1,4 @@
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-
 import com.frsummit.HRM.api.model.RemoteCallee;
-import com.frsummit.HRM.api.rmi.model.User;
 
 public class Main {
 
@@ -10,7 +6,7 @@ public class Main {
 		public String method() {
 			return method1() + " " + method2();
 		}
-		
+
 		public String method1() {
 			return "A 1";
 		}
@@ -19,9 +15,9 @@ public class Main {
 			return "A 2";
 		}
 	}
-	
+
 	class B extends A {
-		
+
 		public String method2() {
 			return "B 2";
 		}
@@ -43,9 +39,18 @@ public class Main {
 //		Main m = new Main();
 //		Main.B b = m.new B();
 //		System.out.println(b.method());
+//		Comparable<Integer> test = 3;
+//		System.out.println(test.compareTo(1));
+//
+//		List<Integer> l = new ArrayList<Integer>();
+//		l.add(1);
+//		l.add(2);
+//		l.add(3);
+//		System.out.println(l.subList(12, 13));
 		
+		System.out.println(byte[].class);
 	}
-	
+
 	public static void generateController(RemoteCallee callee) {
 		//
 	}

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.frsummit.HRM.api.rmi.model.Links;
+import com.frsummit.HRM.api.rmi.entity.Links;
 import com.frsummit.HRM.api.service.HRMRemoteService;
 
 @RestController

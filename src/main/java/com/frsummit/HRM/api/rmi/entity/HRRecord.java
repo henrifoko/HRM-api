@@ -1,6 +1,7 @@
-package com.frsummit.HRM.api.rmi.model;
+package com.frsummit.HRM.api.rmi.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 public class HRRecord implements Serializable {
@@ -254,6 +255,13 @@ public class HRRecord implements Serializable {
     }
 
     public void setHrRecordUser(Set<User> hrRecordUser) {
-        this.hrRecordUser = hrRecordUser;
+		HashSet<User> set = new HashSet<User>();
+		hrRecordUser.forEach(user -> set.add(user));
+
+		/**
+		 * Date transfered from possibly non known implementation of Set interface to
+		 * the HashSet interface which can be easily transfered throw the RMI canal
+		 */
+		this.hrRecordUser = set;
     }
 }

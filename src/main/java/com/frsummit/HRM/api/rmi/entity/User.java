@@ -1,8 +1,12 @@
-package com.frsummit.HRM.api.rmi.model;
+package com.frsummit.HRM.api.rmi.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder(alphabetic = true)
 public class User implements Serializable {
     private String id;
     private String firstName;
@@ -221,6 +225,11 @@ public class User implements Serializable {
     }
 
     public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+		Set<Role> rolesMashallable = new HashSet<Role>();
+		for (Role role : roles) {
+			rolesMashallable.add(role);
+		}
+
+		this.roles = rolesMashallable;
     }
 }

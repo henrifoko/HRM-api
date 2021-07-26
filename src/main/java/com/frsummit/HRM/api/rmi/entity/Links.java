@@ -1,4 +1,4 @@
-package com.frsummit.HRM.api.rmi.model;
+package com.frsummit.HRM.api.rmi.entity;
 
 import java.io.Serializable;
 

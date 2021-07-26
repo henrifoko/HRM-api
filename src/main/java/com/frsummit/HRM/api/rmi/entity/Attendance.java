@@ -1,4 +1,4 @@
-package com.frsummit.HRM.api.rmi.model;
+	package com.frsummit.HRM.api.rmi.entity;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -7,7 +7,12 @@ import java.util.Set;
 
 public class Attendance implements Serializable {
 
-    private int attendId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1999001L;
+	
+	private int attendId;
     private String userId;
     private Date signTime;
     private Calendar inTime;
