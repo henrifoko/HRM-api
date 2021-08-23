@@ -1,0 +1,211 @@
+{
+    "ressources": [
+        {
+            "name": "User",
+            "uri": "users",
+            "endpoints": [
+                {
+                    "name": "findUserByEmail",
+                    "uriPattern": "email/{email}",
+                    "method": "GET",
+                    "version": "1",
+                    "security": {
+                        "authenticated": true,
+                        "roles": [
+                            {
+                                "id": 1,
+                                "name": "ROLE_ADMIN"
+                            }
+                        ]
+                    },
+                    "docs": {
+                        "fr": {
+                            "description": "",
+                            "title": "",
+                            "parameters": []
+                        }
+                    },
+                    "invocation": {
+                        "bean": "com.frsummit.HRM.service.UserService",
+                        "method": "findUserByEmail",
+                        "params": [
+                            {
+                                "path": {
+                                    "name": "email",
+                                    "clientType": "java.lang.String",
+                                    "serverType": "java.lang.String",
+                                    "validators": [
+                                        {
+                                            "className": "com.frsummit.HRM.api.generic.validator.EmailValidator",
+                                            "constructorParamTypes": [
+                                                "java.lang.String"
+                                            ],
+                                            "constructorParams": [
+                                                "email"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "invokerPostprocessingStrategy": "POJO",
+                        "invokerPreprocessingStrategy": "REGULAR"
+                    },
+                    "preprocessing": "REGULAR",
+                    "postprocessing": "REGULAR"
+                },
+                {
+                    "name": "findAllUsers",
+                    "uriPattern": "",
+                    "method": "GET",
+                    "version": "1",
+                    "security": {
+                        "authenticated": true,
+                        "roles": [
+                            {
+                                "id": 1,
+                                "name": "ROLE_ADMIN"
+                            }
+                        ]
+                    },
+                    "docs": {
+                        "fr": {
+                            "description": "",
+                            "title": "",
+                            "parameters": []
+                        }
+                    },
+                    "invocation": {
+                        "bean": "com.frsummit.HRM.service.UserService",
+                        "method": "findAllUsers",
+                        "params": [],
+                        "invokerPostprocessingStrategy": "POJO_LIST",
+                        "invokerPreprocessingStrategy": "REGULAR"
+                    },
+                    "preprocessing": "REGULAR",
+                    "postprocessing": "REGULAR"
+                },
+                {
+                    "name": "findUserById",
+                    "uriPattern": "id/{id}",
+                    "method": "GET",
+                    "version": "1",
+                    "security": {
+                        "authenticated": true,
+                        "roles": [
+                            {
+                                "id": 1,
+                                "name": "ROLE_ADMIN"
+                            }
+                        ]
+                    },
+                    "docs": {
+                        "fr": {
+                            "description": "",
+                            "title": "",
+                            "parameters": []
+                        }
+                    },
+                    "invocation": {
+                        "bean": "com.frsummit.HRM.service.UserService",
+                        "method": "findUserById",
+                        "params": [
+                            {
+                                "path": {
+                                    "name": "id",
+                                    "clientType": "java.lang.String",
+                                    "serverType": "java.lang.String",
+                                    "validators": []
+                                }
+                            }
+                        ],
+                        "invokerPostprocessingStrategy": "POJO",
+                        "invokerPreprocessingStrategy": "REGULAR"
+                    },
+                    "preprocessing": "REGULAR",
+                    "postprocessing": "REGULAR"
+                },
+                {
+                    "name": "findUserByDepartment",
+                    "uriPattern": "dept/{dept}",
+                    "method": "GET",
+                    "version": "1",
+                    "security": {
+                        "authenticated": true,
+                        "roles": [
+                            {
+                                "id": 1,
+                                "name": "ROLE_ADMIN"
+                            }
+                        ]
+                    },
+                    "docs": {
+                        "fr": {
+                            "description": "",
+                            "title": "",
+                            "parameters": []
+                        }
+                    },
+                    "invocation": {
+                        "bean": "com.frsummit.HRM.service.UserService",
+                        "method": "findUserByDepartment",
+                        "params": [
+                            {
+                                "path": {
+                                    "name": "dept",
+                                    "clientType": "java.lang.String",
+                                    "serverType": "java.lang.String",
+                                    "validators": []
+                                }
+                            }
+                        ],
+                        "invokerPostprocessingStrategy": "POJO_LIST",
+                        "invokerPreprocessingStrategy": "REGULAR"
+                    },
+                    "preprocessing": "REGULAR",
+                    "postprocessing": "REGULAR"
+                },
+                {
+                    "name": "createNewUser",
+                    "uriPattern": "",
+                    "method": "POST",
+                    "version": "1",
+                    "security": {
+                        "authenticated": true,
+                        "roles": [
+                            {
+                                "id": 1,
+                                "name": "ROLE_ADMIN"
+                            }
+                        ]
+                    },
+                    "docs": {
+                        "fr": {
+                            "description": "",
+                            "title": "",
+                            "parameters": []
+                        }
+                    },
+                    "invocation": {
+                        "bean": "com.frsummit.HRM.service.UserService",
+                        "method": "createNewUser",
+                        "params": [
+                            {
+                                "body": {
+                                    "required": true,
+                                    "clientType": "com.frsummit.HRM.api.server.entity.User",
+                                    "serverType": "com.frsummit.HRM.model.User",
+                                    "validators": []
+                                }
+                            }
+                        ],
+                        "invokerPreprocessingStrategy": "REGULAR",
+                        "invokerPostprocessingStrategy": "POJO"
+                    },
+                    "preprocessing": "REGULAR",
+                    "postprocessing": "REGULAR"
+                }
+            ]
+        }
+    ]
+}

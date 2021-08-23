@@ -1,4 +1,4 @@
-import com.frsummit.HRM.api.model.RemoteCallee;
+import com.frsummit.HRM.api.server.model.RemoteCallee;
 
 public class Main {
 
